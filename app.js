@@ -228,4 +228,89 @@ function mixedNumbers(arr) {
       
       console.log(isEveryoneHere(users));
 
-      //#18 
+      //#18 Iterate through the keys of an object with a for...in statement
+      const users = {
+        Alan: {
+          online: false
+        },
+        Jeff: {
+          online: true
+        },
+        Sarah: {
+          online: false
+        }
+      }
+      
+      function countOnline(usersObj) {
+        // Only change code below this line
+      let result = 0;
+        for (let user in usersObj) {
+          if (usersObj[user].online === true) {
+            result++;
+          }
+        }
+        return result;
+        // Only change code above this line
+      }
+      
+      console.log(countOnline(users));
+
+      //#19 Generate an Array of all object keys with Object.keys()
+      let users = {
+        Alan: {
+          age: 27,
+          online: false
+        },
+        Jeff: {
+          age: 32,
+          online: true
+        },
+        Sarah: {
+          age: 48,
+          online: false
+        },
+        Ryan: {
+          age: 19,
+          online: true
+        }
+      };
+      
+      function getArrayOfUsers(obj) {
+        // Only change code below this line
+      return Object.keys(users);
+        // Only change code above this line
+      }
+      
+      console.log(getArrayOfUsers(users));
+
+      //#20 Modify an Array stored in an Object
+      let user = {
+        name: 'Kenneth',
+        age: 28,
+        data: {
+          username: 'kennethCodesAllDay',
+          joinDate: 'March 26, 2016',
+          organization: 'freeCodeCamp',
+          friends: [
+            'Sam',
+            'Kira',
+            'Tomo'
+          ],
+          location: {
+            city: 'San Francisco',
+            state: 'CA',
+            country: 'USA'
+          }
+        }
+      };
+      
+      function addFriend(userObj, friend) {
+        // Only change code below this line
+       userObj.data.friends.push(friend);
+        return userObj.data.friends;
+        // Only change code above this line
+      }
+      
+      console.log(addFriend(user, 'Pete'));
+
+      
